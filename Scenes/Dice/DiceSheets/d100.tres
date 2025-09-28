@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DiceStats" load_steps=2 format=3 uid="uid://u57hl1rfroe7"]
+
+[ext_resource type="Script" uid="uid://b8pb4yhdaalvq" path="res://Scenes/Dice/DiceSheets/dice_stats.gd" id="1_hfefv"]
+
+[resource]
+script = ExtResource("1_hfefv")
+type = "D100"
+max = 100
+color = Color(0.836007, 0.836006, 7.70092e-07, 1)
+description = "D100: If it scores one you lose all your score and the
+dice."
+cost = 500
+metadata/_custom_type_script = "uid://b8pb4yhdaalvq"

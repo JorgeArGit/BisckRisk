@@ -1,0 +1,428 @@
+[gd_scene load_steps=36 format=3 uid="uid://ci0sxvfnb6inj"]
+
+[ext_resource type="PackedScene" uid="uid://d1bs6e5qalp08" path="res://Scenes/Dice/dice.tscn" id="1_1r6ip"]
+[ext_resource type="Script" uid="uid://ft5c3txneqfj" path="res://Scenes/Main/main.gd" id="1_lixft"]
+[ext_resource type="Script" uid="uid://b4qry7pq6vnsq" path="res://Scenes/Main/back_ground.gd" id="2_es6iu"]
+[ext_resource type="Script" uid="uid://duaiy8rnn4nxs" path="res://Scenes/Main/difficulty_manager.gd" id="2_imbg2"]
+[ext_resource type="Texture2D" uid="uid://btyb6qjdchubo" path="res://Assets/BackGrounds/parallax.png" id="2_koken"]
+[ext_resource type="Script" uid="uid://daacmlrc5s6d7" path="res://Scenes/Main/ui.gd" id="3_qw60k"]
+[ext_resource type="AudioStream" uid="uid://bmkfktrgowu5r" path="res://Assets/Music/Peachtea - Somewhere in the Elevator.wav" id="5_p6jpk"]
+[ext_resource type="LabelSettings" uid="uid://k55md5tyn44y" path="res://Shaders&Themes/score_label.tres" id="5_vk4q2"]
+[ext_resource type="Script" uid="uid://1bysctpxbuog" path="res://Scenes/Main/dice_container.gd" id="6_4e4y2"]
+[ext_resource type="Resource" uid="uid://bqrfh7owdjvkf" path="res://Scenes/Dice/DiceSheets/d6.tres" id="7_xlvfx"]
+[ext_resource type="LabelSettings" uid="uid://cxgvpbqnyky84" path="res://Shaders&Themes/label.tres" id="8_4a3kt"]
+[ext_resource type="Script" uid="uid://uwgd7y85mmbx" path="res://Scenes/Main/controls.gd" id="11_tdwxr"]
+[ext_resource type="Theme" uid="uid://bnbjsxag8d3ds" path="res://Shaders&Themes/button.tres" id="12_wliom"]
+[ext_resource type="Texture2D" uid="uid://wsnxgdnihg73" path="res://Assets/biscuit.png" id="13_2ok46"]
+[ext_resource type="Texture2D" uid="uid://ba1csgtkdsbel" path="res://Assets/volume.png" id="15_koken"]
+[ext_resource type="AudioStream" uid="uid://ccarbnnsqle2v" path="res://Assets/Sounds/key_sound.wav" id="15_wliom"]
+[ext_resource type="Script" uid="uid://b1rfwjhtwupbo" path="res://Scenes/Main/volume_control.gd" id="16_es6iu"]
+[ext_resource type="Texture2D" uid="uid://j4is6enyblrn" path="res://Assets/music.png" id="17_c4b4r"]
+[ext_resource type="Texture2D" uid="uid://bqhpf2sk7mwxc" path="res://Assets/no_volume.png" id="17_tdwxr"]
+[ext_resource type="Script" uid="uid://87o088wvkhud" path="res://Scenes/Main/pause_control.gd" id="19_4a3kt"]
+[ext_resource type="Texture2D" uid="uid://c1dvkh6eh7bsu" path="res://Assets/no_music.png" id="19_4o5wv"]
+[ext_resource type="Script" uid="uid://djajylbew5fo8" path="res://Scenes/Main/menu.gd" id="19_tdwxr"]
+[ext_resource type="Texture2D" uid="uid://d3uoriscv741s" path="res://Assets/continue.png" id="20_ifk88"]
+[ext_resource type="Texture2D" uid="uid://c4g7w7t6f442y" path="res://Assets/pause.png" id="21_8sujb"]
+[ext_resource type="Theme" uid="uid://cyejutj6t72mk" path="res://Shaders&Themes/button2.tres" id="23_8sujb"]
+[ext_resource type="Script" uid="uid://b4jj0hoekd8cs" path="res://Scenes/Main/win_screen.gd" id="24_tyqxl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ok46"]
+bg_color = Color(0.533333, 0.768627, 0.301961, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.301961, 0.537255, 0.0705882, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="Theme" id="Theme_koken"]
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxFlat_2ok46")
+Button/styles/focus = SubResource("StyleBoxFlat_2ok46")
+Button/styles/hover = SubResource("StyleBoxFlat_2ok46")
+Button/styles/normal = SubResource("StyleBoxFlat_2ok46")
+Button/styles/pressed = SubResource("StyleBoxFlat_2ok46")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wliom"]
+bg_color = Color(0.443137, 0.6, 0.85098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.282353, 0.329412, 0.658824, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="Theme" id="Theme_2ok46"]
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxFlat_wliom")
+Button/styles/focus = SubResource("StyleBoxFlat_wliom")
+Button/styles/hover = SubResource("StyleBoxFlat_wliom")
+Button/styles/normal = SubResource("StyleBoxFlat_wliom")
+Button/styles/pressed = SubResource("StyleBoxFlat_wliom")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1t20g"]
+font_size = 64
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ifk88"]
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8sujb"]
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tyqxl"]
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4ohmo"]
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Node"]
+process_mode = 4
+script = ExtResource("1_lixft")
+wait_between_roll = 0.15
+
+[node name="BackGround" type="ParallaxBackground" parent="."]
+process_mode = 3
+script = ExtResource("2_es6iu")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BackGround"]
+motion_mirroring = Vector2(640, 352)
+
+[node name="BackGround" type="ColorRect" parent="BackGround/ParallaxLayer2"]
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+color = Color(1, 0.780392, 0.431373, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackGround"]
+motion_mirroring = Vector2(640, 352)
+
+[node name="TextureRect" type="TextureRect" parent="BackGround/ParallaxLayer"]
+offset_right = 640.0
+offset_bottom = 360.0
+mouse_filter = 2
+texture = ExtResource("2_koken")
+
+[node name="DifficultyManager" type="Node" parent="."]
+script = ExtResource("2_imbg2")
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("3_qw60k")
+
+[node name="Game" type="Control" parent="UI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MoneyLabel" type="Label" parent="UI/Game"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 261.0
+offset_top = 29.0
+offset_right = 339.0
+offset_bottom = 63.0
+grow_horizontal = 2
+size_flags_horizontal = 6
+text = "0/100$"
+label_settings = ExtResource("5_vk4q2")
+
+[node name="LastRollLabel" type="Label" parent="UI/Game"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 235.5
+offset_top = 55.0
+offset_right = 364.5
+offset_bottom = 91.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Last roll: 0"
+label_settings = ExtResource("8_4a3kt")
+
+[node name="Container" type="HBoxContainer" parent="UI/Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = 8.0
+offset_right = 609.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Stats" type="VBoxContainer" parent="UI/Game/Container"]
+custom_minimum_size = Vector2(180, 284)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="DiceContainer" type="GridContainer" parent="UI/Game/Container"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+columns = 3
+script = ExtResource("6_4e4y2")
+
+[node name="Dice" parent="UI/Game/Container/DiceContainer" instance=ExtResource("1_1r6ip")]
+layout_mode = 2
+stats = ExtResource("7_xlvfx")
+
+[node name="Controls" type="VBoxContainer" parent="UI/Game/Container" node_paths=PackedStringArray("main")]
+custom_minimum_size = Vector2(180, 110)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+script = ExtResource("11_tdwxr")
+main = NodePath("../../../..")
+
+[node name="Higher" type="Button" parent="UI/Game/Container/Controls"]
+custom_minimum_size = Vector2(68, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("12_wliom")
+text = "HIGHER"
+
+[node name="Lower" type="Button" parent="UI/Game/Container/Controls"]
+custom_minimum_size = Vector2(68, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+theme = SubResource("Theme_koken")
+text = "LOWER"
+
+[node name="Biscuit" type="Button" parent="UI/Game/Container/Controls"]
+visible = false
+custom_minimum_size = Vector2(68, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_2ok46")
+icon = ExtResource("13_2ok46")
+icon_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Game"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 268.0
+offset_right = 593.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 5.0
+show_percentage = false
+
+[node name="TurnVolume" type="TextureButton" parent="UI"]
+process_mode = 3
+offset_left = 29.0
+offset_top = 25.0
+offset_right = 69.0
+offset_bottom = 65.0
+texture_normal = ExtResource("15_koken")
+script = ExtResource("16_es6iu")
+on = ExtResource("15_koken")
+off = ExtResource("17_tdwxr")
+
+[node name="TurnMusic" type="TextureButton" parent="UI"]
+process_mode = 3
+offset_left = 73.0
+offset_top = 24.0
+offset_right = 113.0
+offset_bottom = 64.0
+texture_normal = ExtResource("17_c4b4r")
+script = ExtResource("16_es6iu")
+bus = "Music"
+on = ExtResource("17_c4b4r")
+off = ExtResource("19_4o5wv")
+
+[node name="TurnPause" type="TextureButton" parent="UI" node_paths=PackedStringArray("main")]
+process_mode = 3
+visible = false
+offset_left = 117.0
+offset_top = 26.0
+offset_right = 157.0
+offset_bottom = 66.0
+texture_normal = ExtResource("20_ifk88")
+script = ExtResource("19_4a3kt")
+on = ExtResource("20_ifk88")
+off = ExtResource("21_8sujb")
+main = NodePath("../..")
+
+[node name="Menu" type="Control" parent="UI" node_paths=PackedStringArray("main")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("19_tdwxr")
+main = NodePath("../..")
+
+[node name="Label" type="Label" parent="UI/Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 163.0
+offset_top = 54.0
+offset_right = 437.0
+offset_bottom = 142.0
+grow_horizontal = 2
+text = "BISCRISK"
+label_settings = SubResource("LabelSettings_1t20g")
+
+[node name="Button" type="Button" parent="UI/Menu"]
+custom_minimum_size = Vector2(100, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 266.0
+offset_top = 136.0
+offset_right = 334.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_8sujb")
+text = "PLAY"
+
+[node name="Label2" type="Label" parent="UI/Menu"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 254.0
+offset_right = 285.0
+offset_bottom = 277.0
+grow_vertical = 0
+text = "Music: Somewhere in the Elevator by Peachtea@You're Perfect Studio"
+label_settings = SubResource("LabelSettings_ifk88")
+
+[node name="Label3" type="Label" parent="UI/Menu"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 310.0
+offset_right = 121.0
+offset_bottom = 333.0
+text = "Sfx: Dice sounds by Kenney"
+label_settings = SubResource("LabelSettings_8sujb")
+
+[node name="Label4" type="Label" parent="UI/Menu"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 278.0
+offset_right = 102.0
+offset_bottom = 301.0
+text = "Created by canarybird"
+label_settings = SubResource("LabelSettings_tyqxl")
+
+[node name="WinScreen" type="Control" parent="UI"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("24_tyqxl")
+
+[node name="Label" type="Label" parent="UI/WinScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -103.0
+offset_right = 71.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You won!"
+label_settings = SubResource("LabelSettings_4ohmo")
+
+[node name="Button" type="Button" parent="UI/WinScreen"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -26.0
+offset_right = 60.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("23_8sujb")
+text = "PLAY AGAIN"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("5_p6jpk")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("15_wliom")
+bus = &"Sfx"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="pressed" from="UI/Game/Container/Controls/Higher" to="UI/Game/Container/Controls" method="_on_higher_pressed"]
+[connection signal="pressed" from="UI/Game/Container/Controls/Lower" to="UI/Game/Container/Controls" method="_on_lower_pressed"]
+[connection signal="pressed" from="UI/Game/Container/Controls/Biscuit" to="." method="_on_biscuit_pressed"]
+[connection signal="button_down" from="UI/TurnVolume" to="UI/TurnVolume" method="_on_button_down"]
+[connection signal="button_up" from="UI/TurnVolume" to="UI/TurnVolume" method="_on_button_up"]
+[connection signal="pressed" from="UI/TurnVolume" to="UI/TurnVolume" method="_on_pressed"]
+[connection signal="button_down" from="UI/TurnPause" to="UI/TurnPause" method="_on_button_down"]
+[connection signal="button_up" from="UI/TurnPause" to="UI/TurnPause" method="_on_button_up"]
+[connection signal="pressed" from="UI/TurnPause" to="UI/TurnPause" method="_on_pressed"]
+[connection signal="button_down" from="UI/Menu/Button" to="UI/Menu" method="_on_button_button_down"]
+[connection signal="button_up" from="UI/Menu/Button" to="UI/Menu" method="_on_button_button_up"]
+[connection signal="pressed" from="UI/Menu/Button" to="UI/Menu" method="_on_button_pressed"]
+[connection signal="button_down" from="UI/WinScreen/Button" to="UI/WinScreen" method="_on_button_button_down"]
+[connection signal="button_up" from="UI/WinScreen/Button" to="UI/WinScreen" method="_on_button_button_up"]
+[connection signal="pressed" from="UI/WinScreen/Button" to="UI/WinScreen" method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

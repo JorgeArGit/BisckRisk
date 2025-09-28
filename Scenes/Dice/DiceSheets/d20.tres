@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DiceStats" load_steps=2 format=3 uid="uid://ovelb613hurm"]
+
+[ext_resource type="Script" uid="uid://b8pb4yhdaalvq" path="res://Scenes/Dice/DiceSheets/dice_stats.gd" id="1_bc13d"]
+
+[resource]
+script = ExtResource("1_bc13d")
+type = "D20"
+max = 20
+color = Color(0, 0, 1, 1)
+description = "D20: Add one to combo when it scores. 
+If it scores one lose  all your score."
+cost = 250
+metadata/_custom_type_script = "uid://b8pb4yhdaalvq"

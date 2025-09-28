@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DiceStats" load_steps=2 format=3 uid="uid://bathou4bvijfr"]
+
+[ext_resource type="Script" uid="uid://b8pb4yhdaalvq" path="res://Scenes/Dice/DiceSheets/dice_stats.gd" id="1_xeqt7"]
+
+[resource]
+script = ExtResource("1_xeqt7")
+type = "D1000"
+max = 1000
+color = Color(1, 1, 1, 1)
+description = "D1000: If it scores one you lose all your score 
+and all the dices."
+cost = 10000
+metadata/_custom_type_script = "uid://b8pb4yhdaalvq"

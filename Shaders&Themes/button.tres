@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bnbjsxag8d3ds"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktx7d"]
+bg_color = Color(0.909804, 0.207843, 0.384314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.658824, 0.0588235, 0.207843, 1)
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[resource]
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxFlat_ktx7d")
+Button/styles/focus = SubResource("StyleBoxFlat_ktx7d")
+Button/styles/hover = SubResource("StyleBoxFlat_ktx7d")
+Button/styles/normal = SubResource("StyleBoxFlat_ktx7d")
+Button/styles/pressed = SubResource("StyleBoxFlat_ktx7d")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="DiceStats" load_steps=2 format=3 uid="uid://1rtm8y3ybybf"]
+
+[ext_resource type="Script" uid="uid://b8pb4yhdaalvq" path="res://Scenes/Dice/DiceSheets/dice_stats.gd" id="1_qa226"]
+
+[resource]
+script = ExtResource("1_qa226")
+type = "D8"
+max = 8
+color = Color(1, 0, 1, 1)
+description = "D8: Add four to combo when it scores. 
+If it scores one lose  all your score and the dice."
+cost = 1000
+metadata/_custom_type_script = "uid://b8pb4yhdaalvq"
